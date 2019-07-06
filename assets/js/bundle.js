@@ -20,8 +20,6 @@ const setCookie = (cname, cvalue, exdays) => {
 const getCookie = (cname) => {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
-  console.log(decodedCookie)
-  console.log(document.cookie)
   let ca = decodedCookie.split(';');
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
@@ -39,7 +37,7 @@ const hasVisited = getCookie('visited');
 
 
 if (!hasVisited){
-  setCookie('visited', true, 1)
+  setCookie('visited', true, .10)
   setTimeout(()=>{
     modalOverlay.style.display = "block";
     modal.classList.add('fadeInDown')
